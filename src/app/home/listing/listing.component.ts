@@ -12,10 +12,17 @@ export class ListingComponent implements OnInit {
     _id: number;
     userInput: string;
     hotels_List: I_Hotel[];
+    roomType;
 
     constructor(private route: ActivatedRoute, private listingService: ListingService) { }
+
     ngOnInit(): void {
         this._id = this.route.snapshot.params['_id'];
         this.listingService.getHotelPerTrip(this._id).subscribe(data => this.hotels_List = data)
+    }
+
+    resetBtn() {
+        this.roomType = null;
+        this.userInput = null;
     }
 }

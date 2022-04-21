@@ -15,6 +15,7 @@ import { discountPipe } from './Pipes/discount.pipe';
 import { TextCasePipe } from './Pipes/textCase.pipe';
 import { HomeService } from './services/home.service';
 import { ListingService } from './services/listing.service';
+import { HotelSearchPipe } from './Pipes/hotel.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ListingService } from './services/listing.service';
     FooterComponent,
     TextCasePipe,
     discountPipe,
-    ListingComponent
+    ListingComponent,
+    HotelSearchPipe
   ],
   imports: [
     BrowserModule,

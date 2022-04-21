@@ -1,5 +1,6 @@
 import { I_Room } from "./room.model";
 
+
 export interface I_Hotel {
     _id: string,
     name: string,
@@ -10,6 +11,7 @@ export interface I_Hotel {
     cost: number,
     address: string,
     roomtype: I_Room,
+    roomname: string,
     tripType: number,
     tripname: string
 }

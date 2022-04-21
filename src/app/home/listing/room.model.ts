@@ -1,4 +1,4 @@
 export interface I_Room {
-    roomtype: string,
-    roomname: string
+    _id: string,
+    roomType: number
 }
