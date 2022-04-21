@@ -1,0 +1,55 @@
+<!-- <h3>Listing Page for id - {{ _id }}</h3> -->
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Hotel Name" [(ngModel)]="userInput">
+        </div>
+        <div>
+            <p>
+                You are searching for Hotel : {{userInput}}
+            </p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">Filter</div>
+    <div *ngIf="hotels_List;else noData">
+        <div class="col-md-9">
+            <div class="container-fluid">
+                <div class="main-heading">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="Item" *ngFor="let hotel of hotels_List">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <img [src]="hotel.thumb" alt="" class="Image">
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="hotel_name">
+                                            <a>{{hotel.name}}</a>
+                                            <div class="city_name">{{hotel.city_name}}</div>
+                                            <div class="address-text">{{hotel.locality}}</div>
+                                            <div class="address-text">{{hotel.address}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <div class="cuisine">Cost for Night</div>
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <div class="cuisine_data">{{hotel.cost}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #noData>
+        <img src="../../../assets/Loader Icons/hotel_list Loader icon.gif" alt="hotel_list Loader icon">
+    </ng-template>
+</div>

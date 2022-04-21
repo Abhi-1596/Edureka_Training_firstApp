@@ -1,0 +1,17 @@
+<div class="imageContainer">
+    <div id="logo">
+        D!
+    </div>
+    <div class="heading">
+        {{title}}
+    </div>
+    <div class="locationSelector">
+        <select class="locationDropDown">
+            <option *ngFor="let location of locations" value="{{location.city}}">
+                {{location.city_name | textCaseTransform:'Camel'}}</option>
+        </select>
+        <select class="hotelDropDown">
+            <option value="">-----Select Hotel-----</option>
+        </select>
+    </div>
+</div>

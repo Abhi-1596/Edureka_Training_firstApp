@@ -1,0 +1,34 @@
+<div>
+    <div class="quickSearchContainer">
+        <p class="quickSearchHeading">
+            Quick Search
+        </p>
+        <p class="quickSearchSubHeading">
+            {{ title }}
+        </p>
+        <br>
+        <div *ngIf="hotelTypes;else noData">
+            <span *ngFor="let tripType of hotelTypes">
+                <a [routerLink]="['/listing', tripType._id]">
+                    <div class="tileContainer">
+                        <div class="tileComponent1">
+                            <img [src]="tripType.image" alt="{{tripType.image}}" class="img-rounded">
+                        </div>
+                        <div class="tileComponent2">
+                            <div class="componentHeading">
+                                {{tripType.name}}
+                            </div>
+                            <div class="componentSubHeading">
+                                Start your {{tripType.name | uppercase}} with us
+                                <!-- <p>Starting from {{tripType.cost | discountPrice: 25 | currency:'INR'}}/- only.</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </span>
+        </div>
+        <ng-template #noData>
+            <img src="../../../assets/Loader Icons/quick_search Loader icon.gif" alt="quick_search Loader icon" >
+        </ng-template>
+    </div>
+</div>
